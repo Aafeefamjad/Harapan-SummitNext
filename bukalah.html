@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Harapan SummitNext 🚀</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    overflow:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(
+        135deg,
+        #EE4D2D,
+        #FF824D
+    );
+}
+
+
+/* ================= HOME SCENE ================= */
+
+.scene{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.5s;
+}
+
+
+.container{
+
+    background:white;
+    width:500px;
+    padding:40px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.25);
+
+    animation:fadeIn 1s;
+}
+
+
+h1{
+
+    color:#EE4D2D;
+
+    font-size:42px;
+
+    margin-bottom:5px;
+
+}
+
+
+.subtitle{
+
+    color:#555;
+
+    font-size:18px;
+
+}
+
+
+button{
+
+    padding:14px 25px;
+
+    margin:8px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:#EE4D2D;
+
+    color:white;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+
+button:hover{
+
+    transform:scale(1.08);
+
+    background:#d83b21;
+
+}
+
+
+
+/* ================= PROFILE SIDE IMAGE ================= */
+
+
+.sidePic{
+
+    position:fixed;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:140px;
+
+    height:140px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid white;
+
+    box-shadow:0 0 25px rgba(0,0,0,.5);
+
+    transition:.3s;
+
+}
+
+
+.sidePic:hover{
+
+    transform:
+    translateY(-50%)
+    scale(1.1)
+    rotate(5deg);
+
+}
+
+
+.left{
+
+    left:40px;
+
+}
+
+
+.right{
+
+    right:40px;
+
+}
+
+
+
+/* ================= TEAM SCENE ================= */
+
+
+#teamScene{
+
+    display:none;
+
+    flex-direction:column;
+
+    color:white;
+
+}
+
+
+.teamTitle{
+
+    color:white;
+
+    font-size:40px;
+
+}
+
+
+.cards{
+
+    display:flex;
+
+    gap:40px;
+
+}
+
+
+
+.card{
+
+    background:white;
+
+    color:#333;
+
+    width:260px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.3);
+
+    animation:fadeIn 1s;
+
+}
+
+
+.profile{
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid #EE4D2D;
+
+}
+
+
+.card h2{
+
+    color:#EE4D2D;
+
+}
+
+
+
+/* ================= EFFECT ================= */
+
+
+.fall{
+
+    position:absolute;
+
+    top:-50px;
+
+    animation:drop linear forwards;
+
+}
+
+
+@keyframes drop{
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+.cat{
+
+    position:absolute;
+
+    font-size:70px;
+
+    animation:run 5s linear;
+
+}
+
+
+@keyframes run{
+
+    from{
+
+        left:-100px;
+
+    }
+
+    to{
+
+        left:110%;
+
+    }
+
+}
+
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+.shake{
+
+animation:shake .1s infinite;
+
+}
+
+
+@keyframes shake{
+
+0%{
+transform:translate(5px,5px);
+}
+
+50%{
+transform:translate(-5px,-5px);
+}
+
+100%{
+transform:translate(5px,-5px);
+}
+
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- SIDE PHOTO -->
+
+<img src="Syafiq.jpg" class="sidePic left">
+
+<img src="ajmal.jpg" class="sidePic right">
+
+
+
+<!-- HOME -->
+
+
+<div id="homeScene" class="scene">
+
+
+<div class="container">
+
+
+<h1>
+Harapan SummitNext 🚀
+</h1>
+
+
+<p class="subtitle">
+Building Success Together
+</p>
+
+
+<button onclick="emojiRain()">
+🌧 Hujan
+</button>
+
+
+<button onclick="confetti()">
+🎉 Suprise MF
+</button>
+
+
+<button onclick="cats()">
+🐱 Kucing
+</button>
+
+
+<button onclick="shake()">
+💥 Gempa
+</button>
+
+
+<button onclick="rainbow()">
+🌈 LGBT
+</button>
+
+
+<br>
+
+
+<button onclick="showTeam()">
+
+👥 Perkenalkan duo terhebat SummitNext
+
+</button>
+
+
+</div>
+
+
+</div>
+
+<!-- TEAM SCENE -->
+
+<div id="teamScene" class="scene">
+
+<h1 class="teamTitle">
+🌟 Meet Our Team 🌟
+</h1>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<img src="Syafiq.jpg" class="profile">
+
+<h2>Syafiq</h2>
+
+<p>
+💼 Selalu betmut tanpa sebab<br>
+☕ Kuat makan<br>
+🎮 Kaki main game bocah<br>
+🚀 Bab kerja on top, otak KB
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="ajmal.jpg" class="profile">
+
+<h2>Ajmal</h2>
+
+<p>
+💻 Introvert dan soft spoken<br>
+⚽ Pemalu tapi lawak boleh tahan<br>
+🍗 Suka matcha<br>
+😎 Sentiasa senyum walaupun selalu kena marah
+</p>
+
+</div>
+
+
+</div>
+
+
+<br>
+
+
+<button onclick="backHome()">
+
+⬅ Back To Home
+
+</button>
+
+
+</div>
+
+
+
+
+<script>
+
+
+// ================= EMOJI RAIN =================
+
+
+function emojiRain(){
+
+
+const emoji=[
+"😂",
+"🤣",
+"😎",
+"🔥",
+"🎉",
+"🚀",
+"⭐",
+"🍕",
+"☕",
+"🦄"
+];
+
+
+for(let i=0;i<100;i++){
+
+
+let e=document.createElement("div");
+
+
+e.className="fall";
+
+
+e.innerHTML=
+emoji[
+Math.floor(Math.random()*emoji.length)
+];
+
+
+e.style.left=
+Math.random()*100+"vw";
+
+
+e.style.fontSize=
+(20+Math.random()*40)+"px";
+
+
+e.style.animationDuration=
+(2+Math.random()*3)+"s";
+
+
+document.body.appendChild(e);
+
+
+setTimeout(()=>{
+
+e.remove();
+
+},5000);
+
+
+}
+
+
+}
+
+
+
+
+// ================= CONFETTI =================
+
+
+function confetti(){
+
+
+const colors=[
+"red",
+"blue",
+"yellow",
+"green",
+"purple"
+];
+
+
+for(let i=0;i<150;i++){
+
+
+let c=document.createElement("div");
+
+
+c.className="fall";
+
+
+c.innerHTML="■";
+
+
+c.style.color=
+colors[
+Math.floor(Math.random()*colors.length)
+];
+
+
+c.style.left=
+Math.random()*100+"vw";
+
+
+c.style.fontSize=
+(10+Math.random()*30)+"px";
+
+
+c.style.animationDuration=
+(2+Math.random()*3)+"s";
+
+
+document.body.appendChild(c);
+
+
+setTimeout(()=>{
+
+c.remove();
+
+},5000);
+
+
+}
+
+
+}
+
+
+
+
+// ================= CAT =================
+
+
+function cats(){
+
+
+for(let i=0;i<10;i++){
+
+
+let cat=document.createElement("div");
+
+
+cat.className="cat";
+
+
+cat.innerHTML="🐱";
+
+
+cat.style.top=
+Math.random()*90+"vh";
+
+
+cat.style.animationDelay=
+i*.3+"s";
+
+
+document.body.appendChild(cat);
+
+
+
+setTimeout(()=>{
+
+cat.remove();
+
+},6000);
+
+
+
+}
+
+
+}
+
+
+
+
+
+// ================= SHAKE =================
+
+
+function shake(){
+
+
+document.body.classList.add("shake");
+
+
+setTimeout(()=>{
+
+document.body.classList.remove("shake");
+
+},2000);
+
+
+}
+
+
+
+
+// ================= RAINBOW =================
+
+
+function rainbow(){
+
+
+document.body.style.background=
+"hsl("+Math.random()*360+",80%,60%)";
+
+
+}
+
+
+
+
+// ================= CHANGE SCENE =================
+
+
+function showTeam(){
+
+
+document.getElementById("homeScene")
+.style.display="none";
+
+
+document.querySelector(".left")
+.style.display="none";
+
+
+document.querySelector(".right")
+.style.display="none";
+
+
+document.getElementById("teamScene")
+.style.display="flex";
+
+
+}
+
+
+
+function backHome(){
+
+
+document.getElementById("teamScene")
+.style.display="none";
+
+
+document.getElementById("homeScene")
+.style.display="flex";
+
+
+document.querySelector(".left")
+.style.display="block";
+
+
+document.querySelector(".right")
+.style.display="block";
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
